@@ -7,7 +7,7 @@ function Galeria() {
 
   useEffect(() => {
 
-    fetch("https://jsonplaceholder.typicode.com/photos?_limit=12")
+    fetch("https://jsonplaceholder.typicode.com/photos")
 
       .then(resposta => resposta.json())
 
@@ -23,28 +23,20 @@ function Galeria() {
 
   return (
     <section className="galeria">
-
-      <h1>Minha Galeria</h1>
-
+      <h2>Minha Galeria</h2>
       <div className="grid">
-
         {fotos.map(foto => (
-
           <article key={foto.id} className="card">
-
-            <img
-              src={foto.thumbnailUrl}
-              alt={foto.title}
-            />
-
-            <h3>{foto.title}</h3>
-
+            <div className="img-conteiner">
+               <img
+                src={foto.url}
+                alt={foto.title}
+               />
+            </div>
+            <p>{foto.title}</p>
           </article>
-
         ))}
-
       </div>
-
     </section>
   );
 }
