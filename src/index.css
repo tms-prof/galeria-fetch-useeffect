@@ -63,6 +63,7 @@ body {
   text-align: center;
   align-items: center;
   box-sizing: border-box;
+  padding-top: 1rem;
 }
 
 .grid {
